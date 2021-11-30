@@ -1,5 +1,6 @@
 let decision;
 
+//Generate random number and use it to determine rock/paper/scissors
 function computerPlay () {
     let randomNumber = Math.floor(Math.random()*3);
     if (randomNumber === 0) {
@@ -11,6 +12,7 @@ function computerPlay () {
     }
 }
 
+//Using two parameters determine win/lose/tie and returns appropriate message
 function playRound (playerSelection, computerSelection) {
     decision = null;
     if (playerSelection.toLowerCase() == 'rock' && computerSelection == 'paper') {
@@ -38,6 +40,7 @@ function playRound (playerSelection, computerSelection) {
     }
 }
 
+//Game function to prompt user for input and runs playRound with a random computer entry
 function game () {
     let player = prompt('Please choose rock, paper, or scissors');
     let random = computerPlay();
@@ -46,6 +49,7 @@ function game () {
     console.log(playRound(player, random));
 }
 
+//Score variables and for loop to loop through game 5 times and display score each time
 let playerScore = 0;
 let computerScore = 0;
 for (let i = 0; i < 5; i++) {
