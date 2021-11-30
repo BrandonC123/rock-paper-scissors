@@ -12,6 +12,7 @@ function computerPlay () {
 }
 
 function playRound (playerSelection, computerSelection) {
+    decision = null;
     if (playerSelection.toLowerCase() == 'rock' && computerSelection == 'paper') {
         decision = false;
         return 'You lose! Paper beats rock!';
@@ -30,15 +31,18 @@ function playRound (playerSelection, computerSelection) {
     } else if (playerSelection.toLowerCase() == 'scissors' && computerSelection == 'paper') {
         decision = true;
         return 'You win! Scissors beats paper!';
-    } else {
+    } else if (playerSelection === computerSelection) {
         return 'Tie!';
+    } else {
+        return 'Not an option';
     }
 }
 
 function game () {
     let player = prompt('Please choose rock, paper, or scissors');
     let random = computerPlay();
-    console.log(random + ' computer selection');
+    // console.log(player + ' player selection')
+    // console.log(random + ' computer selection');
     console.log(playRound(player, random));
 }
 
