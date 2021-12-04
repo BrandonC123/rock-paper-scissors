@@ -50,14 +50,32 @@ function game () {
 }
 
 //Score variables and for loop to loop through game 5 times and display score each time
-let playerScore = 0;
-let computerScore = 0;
-for (let i = 0; i < 5; i++) {
-    game();
-    if (decision == true) {
-        playerScore++;
-    } if (decision == false) {
-        computerScore++;
-    }
-    console.log(playerScore + ' - ' + computerScore);
-}
+// let playerScore = 0;
+// let computerScore = 0;
+// for (let i = 0; i < 5; i++) {
+//     game();
+//     if (decision == true) {
+//         playerScore++;
+//     } if (decision == false) {
+//         computerScore++;
+//     }
+//     console.log(playerScore + ' - ' + computerScore);
+// }
+
+const rockBtn = document.querySelector('#rock-btn');
+rockBtn.addEventListener('click', () => {
+    let compSelect = computerPlay();
+    console.log(playRound('rock', compSelect));
+});
+
+const paperBtn = document.querySelector('#paper-btn');
+paperBtn.addEventListener('click', () => {
+    let compSelect = computerPlay();
+    console.log(playRound('paper', compSelect));
+});
+
+const scissorsBtn = document.querySelector('#scissors-btn');
+scissorsBtn.addEventListener('click', () => {
+    let compSelect = computerPlay();
+    console.log(playRound('scissors', compSelect));
+});
