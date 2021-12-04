@@ -1,5 +1,3 @@
-let decision;
-
 //Generate random number and use it to determine rock/paper/scissors
 function computerPlay () {
     let randomNumber = Math.floor(Math.random()*3);
@@ -16,27 +14,27 @@ function computerPlay () {
 function playRound (playerSelection, computerSelection) {
     decision = null;
     if (playerSelection.toLowerCase() == 'rock' && computerSelection == 'paper') {
-        decision = false;
-        return 'You lose! Paper beats rock!';
+        console.log('You lose! Paper beats rock!');
+        return false;
     } else if (playerSelection.toLowerCase() == 'rock' && computerSelection == 'scissors') {
-        decision = true;
-        return 'You win! Rock beats scissors!';
+        console.log('You win! Rock beats scissors!');
+        return true;
     } else if (playerSelection.toLowerCase() == 'paper' && computerSelection == 'rock') {
-        decision = true;
-        return 'You win! Paper beats rock!';
+        console.log('You win! Paper beats rock!');
+        return true;
     } else if (playerSelection.toLowerCase() == 'paper' && computerSelection == 'scissors') {
-        decision = false;
-        return 'You lose! Scissors beats paper!';
+        console.log('You lose! Scissors beats paper!');
+        return false;
     } else if (playerSelection.toLowerCase() == 'scissors' && computerSelection == 'rock') {
-        decision = false;
-        return 'You lose! Rock beats scissors!';
+        console.log('You lose! Rock beats scissors!');
+        return false;
     } else if (playerSelection.toLowerCase() == 'scissors' && computerSelection == 'paper') {
-        decision = true;
-        return 'You win! Scissors beats paper!';
+        console.log('You win! Scissors beats paper!');
+        return true;
     } else if (playerSelection === computerSelection) {
-        return 'Tie!';
+        console.log('Tie!');
     } else {
-        return 'Not an option';
+        console.log('Not an option');
     }
 }
 
