@@ -1,11 +1,15 @@
 //Generate random number and use it to determine rock/paper/scissors
 function computerPlay () {
     let randomNumber = Math.floor(Math.random()*3);
+    let result;
     if (randomNumber === 0) {
+        document.getElementById('imgCompSelect').src = './images/rock.jpeg';
         return 'rock';
     } else if (randomNumber === 1) {
+        document.getElementById('imgCompSelect').src = './images/paper.jpg';
         return 'paper';
     } else {
+        document.getElementById('imgCompSelect').src = './images/scissor.png';
         return 'scissors';
     }
 }
@@ -64,31 +68,28 @@ let resultsDivText;
 const resultsDiv = document.querySelector('#result');
 const scoreDiv = document.querySelector('#score');
 
-const btn = document.querySelector('.btn');
-btn.addEventListener('click', () => {
-    console.log('test');
-});
+// const btn = document.querySelector('.btn');
+// btn.addEventListener('click', () => {
+//     console.log('test');
+// });
 
 const rockBtn = document.querySelector('#rock-btn');
 rockBtn.addEventListener('click', () => {
-    let compSelect = computerPlay();
-    resultsDiv.textContent = playRound('rock', compSelect);
+    resultsDiv.textContent = playRound('rock', computerPlay());
     scoreDiv.textContent = scoreCounter();
     console.log('r');
 });
 
 const paperBtn = document.querySelector('#paper-btn');
 paperBtn.addEventListener('click', () => {
-    let compSelect = computerPlay();
-    resultsDiv.textContent = playRound('paper', compSelect);
+    resultsDiv.textContent = playRound('paper', computerPlay());
     scoreDiv.textContent = scoreCounter();
     console.log('p');
 });
 
 const scissorsBtn = document.querySelector('#scissors-btn');
 scissorsBtn.addEventListener('click', () => {
-    let compSelect = computerPlay();
-    resultsDiv.textContent = playRound('scissors', compSelect);
+    resultsDiv.textContent = playRound('scissors', computerPlay());
     scoreDiv.textContent = scoreCounter();
     console.log('scis');
 });

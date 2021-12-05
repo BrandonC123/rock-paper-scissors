@@ -21,9 +21,15 @@ body {
 }
 
 .image-container {
-    padding: 30px;
+    height: 250px;
+    width: 250px;
     border: solid 5px black;
     border-radius: 5px;
+}
+
+.images {
+    height: 250px;
+    width: 250px;
 }
 
 .buttons {
