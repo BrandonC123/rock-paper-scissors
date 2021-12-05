@@ -11,30 +11,31 @@ function computerPlay () {
 }
 
 //Using two parameters determine win/lose/tie and returns appropriate message
+let decision;
 function playRound (playerSelection, computerSelection) {
     decision = null;
     if (playerSelection.toLowerCase() == 'rock' && computerSelection == 'paper') {
-        console.log('You lose! Paper beats rock!');
-        return false;
+        decision = false;
+        return 'You lose! Paper beats rock!';
     } else if (playerSelection.toLowerCase() == 'rock' && computerSelection == 'scissors') {
-        console.log('You win! Rock beats scissors!');
-        return true;
+        decision = true;
+        return 'You win! Rock beats scissors!';
     } else if (playerSelection.toLowerCase() == 'paper' && computerSelection == 'rock') {
-        console.log('You win! Paper beats rock!');
-        return true;
+        decision = true;
+        return 'You win! Paper beats rock!';
     } else if (playerSelection.toLowerCase() == 'paper' && computerSelection == 'scissors') {
-        console.log('You lose! Scissors beats paper!');
-        return false;
+        decision = false;
+        return 'You lose! Scissors beats paper!';
     } else if (playerSelection.toLowerCase() == 'scissors' && computerSelection == 'rock') {
-        console.log('You lose! Rock beats scissors!');
-        return false;
+        decision = false;
+        return 'You lose! Rock beats scissors!';
     } else if (playerSelection.toLowerCase() == 'scissors' && computerSelection == 'paper') {
-        console.log('You win! Scissors beats paper!');
-        return true;
+        decision = true;
+        return 'You win! Scissors beats paper!';
     } else if (playerSelection === computerSelection) {
-        console.log('Tie!');
+        return 'Tie!';
     } else {
-        console.log('Not an option');
+        return 'Not an option';
     }
 }
 
@@ -60,20 +61,57 @@ function game () {
 //     console.log(playerScore + ' - ' + computerScore);
 // }
 
+let resultsDivText;
+let compSelect;
+const resultsDiv = document.querySelector('#result');
+
 const rockBtn = document.querySelector('#rock-btn');
 rockBtn.addEventListener('click', () => {
     let compSelect = computerPlay();
-    console.log(playRound('rock', compSelect));
+    resultsDiv.textContent = playRound('rock', compSelect);
+    console.log('r');
 });
 
 const paperBtn = document.querySelector('#paper-btn');
 paperBtn.addEventListener('click', () => {
     let compSelect = computerPlay();
-    console.log(playRound('paper', compSelect));
+    resultsDiv.textContent = playRound('paper', compSelect);
+    console.log('p');
 });
 
 const scissorsBtn = document.querySelector('#scissors-btn');
 scissorsBtn.addEventListener('click', () => {
     let compSelect = computerPlay();
-    console.log(playRound('scissors', compSelect));
+    resultsDiv.textContent = playRound('scissors', compSelect);
+    console.log('scis');
 });
+
+
+
+
+
+// function playRound (playerSelection, computerSelection) {
+//     if (playerSelection.toLowerCase() == 'rock' && computerSelection == 'paper') {
+//         console.log('You lose! Paper beats rock!');
+//         return false;
+//     } else if (playerSelection.toLowerCase() == 'rock' && computerSelection == 'scissors') {
+//         console.log('You win! Rock beats scissors!');
+//         return true;
+//     } else if (playerSelection.toLowerCase() == 'paper' && computerSelection == 'rock') {
+//         console.log('You win! Paper beats rock!');
+//         return true;
+//     } else if (playerSelection.toLowerCase() == 'paper' && computerSelection == 'scissors') {
+//         console.log('You lose! Scissors beats paper!');
+//         return false;
+//     } else if (playerSelection.toLowerCase() == 'scissors' && computerSelection == 'rock') {
+//         console.log('You lose! Rock beats scissors!');
+//         return false;
+//     } else if (playerSelection.toLowerCase() == 'scissors' && computerSelection == 'paper') {
+//         console.log('You win! Scissors beats paper!');
+//         return true;
+//     } else if (playerSelection === computerSelection) {
+//         console.log('Tie!');
+//     } else {
+//         console.log('Not an option');
+//     }
+// }
