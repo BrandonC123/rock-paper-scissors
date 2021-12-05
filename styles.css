@@ -13,6 +13,19 @@ body {
     border-radius: 10px;
 }
 
+.top {
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.image-container {
+    padding: 30px;
+    border: solid 5px black;
+    border-radius: 5px;
+}
+
 .buttons {
     display: flex;
 }
