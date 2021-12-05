@@ -3,13 +3,13 @@ function computerPlay () {
     let randomNumber = Math.floor(Math.random()*3);
     let result;
     if (randomNumber === 0) {
-        document.getElementById('imgCompSelect').src = './images/rock.jpeg';
+        document.getElementById('imgCompSelect').src = './images/rock.png';
         return 'rock';
     } else if (randomNumber === 1) {
-        document.getElementById('imgCompSelect').src = './images/paper.jpg';
+        document.getElementById('imgCompSelect').src = './images/paper.png';
         return 'paper';
     } else {
-        document.getElementById('imgCompSelect').src = './images/scissor.png';
+        document.getElementById('imgCompSelect').src = './images/scissorComp.png';
         return 'scissors';
     }
 }
@@ -66,9 +66,9 @@ function scoreCounter () {
 
 function playerImage (selection) {
     if (selection === 'rock') {
-        document.getElementById('imgPlayerSelect').src = './images/rock.jpeg';
+        document.getElementById('imgPlayerSelect').src = './images/rock.png';
     } else if (selection === 'paper') {
-        document.getElementById('imgPlayerSelect').src = './images/paper.jpg';
+        document.getElementById('imgPlayerSelect').src = './images/paper.png';
     } else {
         document.getElementById('imgPlayerSelect').src = './images/scissor.png';
     }
@@ -77,11 +77,6 @@ function playerImage (selection) {
 let resultsDivText;
 const resultsDiv = document.querySelector('#result');
 const scoreDiv = document.querySelector('#score');
-
-// const btn = document.querySelector('.btn');
-// btn.addEventListener('click', () => {
-//     console.log('test');
-// });
 
 const rockBtn = document.querySelector('#rock-btn');
 rockBtn.addEventListener('click', () => {
