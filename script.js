@@ -48,27 +48,32 @@ function game () {
     console.log(playRound(player, random));
 }
 
-//Score variables and for loop to loop through game 5 times and display score each time
-// let playerScore = 0;
-// let computerScore = 0;
-// for (let i = 0; i < 5; i++) {
-//     game();
-//     if (decision == true) {
-//         playerScore++;
-//     } if (decision == false) {
-//         computerScore++;
-//     }
-//     console.log(playerScore + ' - ' + computerScore);
-// }
+let playerScore = 0;
+let compScore = 0;
+function scoreCounter () {
+    if (decision == true) {
+        playerScore++;
+    } 
+    if (decision == false) {
+        compScore++;
+    }
+    return playerScore + ' - ' + compScore;
+}
 
 let resultsDivText;
-let compSelect;
 const resultsDiv = document.querySelector('#result');
+const scoreDiv = document.querySelector('.score');
+
+const btn = document.querySelector('.btn');
+btn.addEventListener('click', () => {
+    console.log('test');
+});
 
 const rockBtn = document.querySelector('#rock-btn');
 rockBtn.addEventListener('click', () => {
     let compSelect = computerPlay();
     resultsDiv.textContent = playRound('rock', compSelect);
+    scoreDiv.textContent = scoreCounter();
     console.log('r');
 });
 
@@ -76,6 +81,7 @@ const paperBtn = document.querySelector('#paper-btn');
 paperBtn.addEventListener('click', () => {
     let compSelect = computerPlay();
     resultsDiv.textContent = playRound('paper', compSelect);
+    scoreDiv.textContent = scoreCounter();
     console.log('p');
 });
 
@@ -83,6 +89,7 @@ const scissorsBtn = document.querySelector('#scissors-btn');
 scissorsBtn.addEventListener('click', () => {
     let compSelect = computerPlay();
     resultsDiv.textContent = playRound('scissors', compSelect);
+    scoreDiv.textContent = scoreCounter();
     console.log('scis');
 });
 
