@@ -62,7 +62,7 @@ function scoreCounter () {
 
 let resultsDivText;
 const resultsDiv = document.querySelector('#result');
-const scoreDiv = document.querySelector('.score');
+const scoreDiv = document.querySelector('#score');
 
 const btn = document.querySelector('.btn');
 btn.addEventListener('click', () => {
