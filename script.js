@@ -64,6 +64,16 @@ function scoreCounter () {
     return playerScore + ' - ' + compScore;
 }
 
+function playerImage (selection) {
+    if (selection === 'rock') {
+        document.getElementById('imgPlayerSelect').src = './images/rock.jpeg';
+    } else if (selection === 'paper') {
+        document.getElementById('imgPlayerSelect').src = './images/paper.jpg';
+    } else {
+        document.getElementById('imgPlayerSelect').src = './images/scissor.png';
+    }
+}
+
 let resultsDivText;
 const resultsDiv = document.querySelector('#result');
 const scoreDiv = document.querySelector('#score');
@@ -76,6 +86,7 @@ const scoreDiv = document.querySelector('#score');
 const rockBtn = document.querySelector('#rock-btn');
 rockBtn.addEventListener('click', () => {
     resultsDiv.textContent = playRound('rock', computerPlay());
+    playerImage('rock');
     scoreDiv.textContent = scoreCounter();
     console.log('r');
 });
@@ -83,6 +94,7 @@ rockBtn.addEventListener('click', () => {
 const paperBtn = document.querySelector('#paper-btn');
 paperBtn.addEventListener('click', () => {
     resultsDiv.textContent = playRound('paper', computerPlay());
+    playerImage('paper');
     scoreDiv.textContent = scoreCounter();
     console.log('p');
 });
@@ -90,6 +102,7 @@ paperBtn.addEventListener('click', () => {
 const scissorsBtn = document.querySelector('#scissors-btn');
 scissorsBtn.addEventListener('click', () => {
     resultsDiv.textContent = playRound('scissors', computerPlay());
+    playerImage('scissor');
     scoreDiv.textContent = scoreCounter();
     console.log('scis');
 });
