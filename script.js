@@ -61,6 +61,13 @@ function scoreCounter () {
     if (decision == false) {
         compScore++;
     }
+    if (playerScore == 5) {
+        resetGame();
+        return 'Player winner!';
+    } else if (compScore == 5) {
+        resetGame();
+        return 'Computer winner!';
+    }
     return playerScore + ' - ' + compScore;
 }
 
@@ -72,6 +79,13 @@ function playerImage (selection) {
     } else {
         document.getElementById('imgPlayerSelect').src = './images/scissor.png';
     }
+}
+
+function resetGame () {
+    playerScore = 0;
+    compScore = 0;
+    document.getElementById('imgPlayerSelect').src = '';
+    document.getElementById('imgCompSelect').src = '';
 }
 
 let resultsDivText;
