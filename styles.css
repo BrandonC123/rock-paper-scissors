@@ -1,6 +1,7 @@
 body {
-    background-color: #F2D8C2;
+    background-color: #DAE8F2;
     font-family: 'Roboto Condensed', sans-serif;
+    color: white;
     font-weight: bold;
 }
 
@@ -10,14 +11,16 @@ body {
     justify-content: center;
     flex-direction: column;
     gap: 20px;
-    background-color: #98909F;
-    border: solid 20px #D3AFAF;
+    background-color: #84B3D4;
+    border: solid 20px #003972;
     padding: 50px;
     border-radius: 10px;
 }
 
 .title {
-    font-size: 30px;
+    text-shadow: 2px 2px 4px black;
+    font-size: 34px;
+    color: white;
 }
 
 .top {
@@ -44,19 +47,29 @@ body {
 }
 #result {
     font-size: 30px;
-    color: #2D3743;
+    text-shadow: 2px 2px 4px black;
+    color: white;
 }
 
 #score {
     font-size: 20px;
     padding: 10px;
-    color: #2D3743;
-    border: solid 3px #7787A6;
+    color: white;
+    text-shadow: 2px 2px 4px black;
+    border: solid 4px black;
+    border-radius: 5px;
+}
+
+.buttons {
+    display: flex;
+    gap: 10px;
 }
 
 button {
     font-size: 24px;
     font-family: 'Roboto Condensed', sans-serif;
     font-weight: bold;
+    background-color: #EFF3F6;
+    border-radius: 8px;
 }
 
