@@ -1,7 +1,6 @@
 //Generate random number and use it to determine rock/paper/scissors
 function computerPlay () {
     let randomNumber = Math.floor(Math.random()*3);
-    let result;
     if (randomNumber === 0) {
         document.getElementById('imgCompSelect').src = './images/rock.png';
         return 'rock';
@@ -84,8 +83,10 @@ function playerImage (selection) {
 function resetGame () {
     playerScore = 0;
     compScore = 0;
+    decision = null;
     document.getElementById('imgPlayerSelect').src = '';
     document.getElementById('imgCompSelect').src = '';
+    scoreDiv.textContent = scoreCounter();
 }
 
 let resultsDivText;
@@ -116,32 +117,7 @@ scissorsBtn.addEventListener('click', () => {
     console.log('scis');
 });
 
-
-
-
-
-// function playRound (playerSelection, computerSelection) {
-//     if (playerSelection.toLowerCase() == 'rock' && computerSelection == 'paper') {
-//         console.log('You lose! Paper beats rock!');
-//         return false;
-//     } else if (playerSelection.toLowerCase() == 'rock' && computerSelection == 'scissors') {
-//         console.log('You win! Rock beats scissors!');
-//         return true;
-//     } else if (playerSelection.toLowerCase() == 'paper' && computerSelection == 'rock') {
-//         console.log('You win! Paper beats rock!');
-//         return true;
-//     } else if (playerSelection.toLowerCase() == 'paper' && computerSelection == 'scissors') {
-//         console.log('You lose! Scissors beats paper!');
-//         return false;
-//     } else if (playerSelection.toLowerCase() == 'scissors' && computerSelection == 'rock') {
-//         console.log('You lose! Rock beats scissors!');
-//         return false;
-//     } else if (playerSelection.toLowerCase() == 'scissors' && computerSelection == 'paper') {
-//         console.log('You win! Scissors beats paper!');
-//         return true;
-//     } else if (playerSelection === computerSelection) {
-//         console.log('Tie!');
-//     } else {
-//         console.log('Not an option');
-//     }
-// }
+const resetBtn = document.querySelector('#reset-btn');
+resetBtn.addEventListener('click', () => { 
+    resetGame();
+});
