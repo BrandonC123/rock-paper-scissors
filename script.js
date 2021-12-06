@@ -42,15 +42,6 @@ function playRound (playerSelection, computerSelection) {
     }
 }
 
-//Game function to prompt user for input and runs playRound with a random computer entry
-function game () {
-    let player = prompt('Please choose rock, paper, or scissors');
-    let random = computerPlay();
-    // console.log(player + ' player selection')
-    // console.log(random + ' computer selection');
-    console.log(playRound(player, random));
-}
-
 let playerScore = 0;
 let compScore = 0;
 function scoreCounter () {
@@ -87,6 +78,7 @@ function resetGame () {
     document.getElementById('imgPlayerSelect').src = '';
     document.getElementById('imgCompSelect').src = '';
     scoreDiv.textContent = scoreCounter();
+    resultsDiv.textContent = 'Match Result';
 }
 
 let resultsDivText;
@@ -98,7 +90,6 @@ rockBtn.addEventListener('click', () => {
     resultsDiv.textContent = playRound('rock', computerPlay());
     playerImage('rock');
     scoreDiv.textContent = scoreCounter();
-    console.log('r');
 });
 
 const paperBtn = document.querySelector('#paper-btn');
@@ -106,7 +97,6 @@ paperBtn.addEventListener('click', () => {
     resultsDiv.textContent = playRound('paper', computerPlay());
     playerImage('paper');
     scoreDiv.textContent = scoreCounter();
-    console.log('p');
 });
 
 const scissorsBtn = document.querySelector('#scissors-btn');
@@ -114,7 +104,6 @@ scissorsBtn.addEventListener('click', () => {
     resultsDiv.textContent = playRound('scissors', computerPlay());
     playerImage('scissor');
     scoreDiv.textContent = scoreCounter();
-    console.log('scis');
 });
 
 const resetBtn = document.querySelector('#reset-btn');
